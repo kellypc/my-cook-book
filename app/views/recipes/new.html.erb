@@ -1,17 +1,38 @@
-<%= form_for @recipe do |f| %>
-  <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
-  <%= f.label :recipe_type_id, 'Tipo da Receita' %>
-  <%= f.collection_select :recipe_type_id, @recipe_types, :id, :name %>
-  <%= f.label :cuisine_id, 'Cozinha' %>
-  <%= f.collection_select :cuisine_id, @cuisines, :id, :name %>
-  <%= f.label :difficulty, 'Dificuldade' %>
-  <%= f.select :difficulty, @difficulties %>
-  <%= f.label :cook_time, 'Tempo de Preparo' %>
-  <%= f.number_field :cook_time %>
-  <%= f.label :ingredients, 'Ingredientes' %>
-  <%= f.text_area :ingredients %>
-  <%= f.label :cook_method, 'Como Preparar' %>
-  <%= f.text_area :cook_method %>
+<div class="container pt-4 pb-3">
+  <h3> Cadastrar Nova Receita </h3>
+  <%= form_for @recipe do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Título' %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipe_type_id, 'Tipo da Receita' %>
+    <%= f.collection_select :recipe_type_id, @recipe_types, :id, :name, {}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cuisine_id, 'Cozinha' %>
+    <%= f.collection_select :cuisine_id, @cuisines, :id, :name, {}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :difficulty, 'Dificuldade' %>
+    <%= f.select :difficulty, @difficulties, {}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cook_time, 'Tempo de Preparo' %>
+    <%= f.number_field :cook_time, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :ingredients, 'Ingredientes' %>
+    <%= f.text_area :ingredients, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cook_method, 'Como Preparar' %>
+    <%= f.text_area :cook_method, {class: "form-control"} %>
+  </div>
   <%= f.submit 'Enviar' %>
-<% end %>
+  <% end %>
+</div>
+
+
+
+
