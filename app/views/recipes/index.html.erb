@@ -1,45 +1,46 @@
+<main role="main">
 
+	<section class="jumbotron text-center">
+		<div class="container">
+			<h1 class="jumbotron-heading">CookBook</h1>
+			<p class="lead text-muted">Bem-vindo ao maior livro de receitas online</p>
+			<p>
+				<%= link_to 'Enviar uma receita', new_recipe_path, class: "btn btn-primary my-2" %>
+				<%= link_to 'Cadastrar tipo de receita', new_recipe_type_path, class: "btn btn-secondary my-2" %>
+				<%= link_to 'Cadastrar cozinha', new_cuisine_path, class: "btn btn-secondary my-2" %>
+			</p>
+		</div>
+	</section>
 
-<section class="jumbotron text-center">
-	<div class="container">
-		<h1 class="jumbotron-heading">CookBook</h1>
-		<p class="lead text-muted">Bem-vindo ao maior livro de receitas online</p>
-		<p>
-			<%= link_to 'Enviar uma receita', new_recipe_path, class: "btn btn-primary my-2" %>
-			<%= link_to 'Cadastrar tipo de receita', new_recipe_type_path, class: "btn btn-secondary my-2" %>
-			<%= link_to 'Cadastrar cozinha', new_cuisine_path, class: "btn btn-secondary my-2" %>
-		</p>
-	</div>
-</section>
-
-<div class="album py-5 bg-light">
-	<div class="container">
-		<div class="row">
-			<% @recipes.each do |recipe| %>			
-					<div class="col-md-4">
-						<div class="card mb-4 box-shadow">
-							<img class="card-img-top" src="/assets/receita.jpg" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text">
-									<%= link_to recipe.title, recipe %>
-										<br/>
-										<%= recipe.recipe_type.name %>
-										<br/>
-										<%= recipe.cuisine.name %>
-										<br/>
-										<%= recipe.difficulty %>
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-muted"><%= recipe.cook_time_min %></small>
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<div class="row">
+				<% @recipes.each do |recipe| %>			
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="/assets/receita.jpg" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">
+								<%= link_to recipe.title, recipe %>
+								<br/>
+								<%= recipe.recipe_type.name %>
+								<br/>
+								<%= recipe.cuisine.name %>
+								<br/>
+								<%= recipe.difficulty %>
+							</p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+									<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 								</div>
+								<small class="text-muted"><%= recipe.cook_time_min %></small>
 							</div>
 						</div>
 					</div>
-			<% end %>
+				</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>
+</main>
