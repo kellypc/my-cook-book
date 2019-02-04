@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe_types = RecipeType.all
     @cuisines = Cuisine.all
+    @difficulties = ["Facil", "Medio", "Dificil"]
   end
 
   def create

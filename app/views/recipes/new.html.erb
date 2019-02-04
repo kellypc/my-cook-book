@@ -6,7 +6,7 @@
   <%= f.label :cuisine_id, 'Cozinha' %>
   <%= f.collection_select :cuisine_id, @cuisines, :id, :name %>
   <%= f.label :difficulty, 'Dificuldade' %>
-  <%= f.text_field :difficulty %>
+  <%= f.select :difficulty, @difficulties %>
   <%= f.label :cook_time, 'Tempo de Preparo' %>
   <%= f.number_field :cook_time %>
   <%= f.label :ingredients, 'Ingredientes' %>
