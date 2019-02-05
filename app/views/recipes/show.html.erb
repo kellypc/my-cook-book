@@ -1,13 +1,42 @@
-<h1><%= @recipe.title %></h1>
-<h3>Detalhes</h3>
-<p><%= @recipe.recipe_type.name %></p>
-<p><%= @recipe.cuisine.name %></p>
-<p><%= @recipe.difficulty %></p>
-<p><%= @recipe.cook_time_min %></p>
-<h3>Ingredientes</h3>
-<p><%= @recipe.ingredients %></p>
-<h3>Como Preparar</h3>
-<p><%= @recipe.cook_method %></p>
-
-<%= link_to 'Editar', edit_recipe_path(@recipe) %>
-<%= link_to 'Voltar', root_path %>
+<div class="container pt-4">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4 text-center">
+							<img class="img-thumbnail" src="/assets/receita.jpg">
+						</div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="only-bottom-margin"><%= @recipe.title %></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span class="text-muted">Tipo de receita:</span> <%= @recipe.recipe_type.name %><br>
+									<span class="text-muted">Tipo de cozinha:</span><%= @recipe.cuisine.name %><br>
+									<span class="text-muted">Dificuldade:</span> <%= @recipe.difficulty %><br><br>
+									<h3>Ingredientes</h3>
+									<span class="text-muted">Ingredientes:</span> <%= @recipe.ingredients %></ %><br><br>
+									<h3>Como Preparar</h3>
+									<span class="text-muted">Modo de preparo:</span> <%= @recipe.cook_method %><br><br>
+									<span class="text-muted">Tempo de preparo:</span> <%= @recipe.cook_time_min %><br><br>
+									<small class="text-muted">Criado em: <%= @recipe.created_at.strftime("%d.%m.%Y") %></small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<hr>
+							<%= link_to 'Editar', edit_recipe_path(@recipe), class: "btn btn-sm btn-outline-secondary" %>
+							<%= link_to 'Voltar', root_path, class: "btn btn-sm btn-outline-secondary" %>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
