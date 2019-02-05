@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe_types = RecipeType.all
     @cuisines = Cuisine.all
+    @difficulties = ["Facil", "Medio", "Dificil"]
   end
 
   def update
@@ -50,7 +51,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :recipe_type_id, :cuisine_id,
-                                   :difficulty, :cook_time, :ingredients,
-                                   :cook_method)
+     :difficulty, :cook_time, :ingredients,
+     :cook_method)
   end
 end
