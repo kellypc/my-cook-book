@@ -1,5 +1,8 @@
-<%= form_for @cuisine do |f| %>
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <%= f.submit 'Enviar' %>
-<% end %>
+<div class="container pt-4">
+	<h2>Cadastrar tipo de Cozinha</h2>
+	<%= form_for @cuisine do |f| %>
+	<%= f.label :name, 'Nome' %>
+	<%= f.text_field :name %>
+	<%= f.submit 'Enviar' %>
+	<% end %>
+</div>
