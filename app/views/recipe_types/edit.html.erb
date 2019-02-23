@@ -1,0 +1,8 @@
+<div class="container pt-4">
+<h2>Editar Tipo de Receita</h2>
+	<%= form_for @recipe_type do |f| %>
+	<%= f.label :name, 'Nome' %>
+	<%= f.text_field :name %>
+	<%= f.submit 'Enviar' %>
+	<% end %>
+</div>
